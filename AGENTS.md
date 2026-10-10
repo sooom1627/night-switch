@@ -1,3 +1,13 @@
+# Before You Start
+
+Every change is tied to the whole product. Before any work:
+
+1. **Sources of truth** are `docs/product.md` (product, spec §2, Epics §3) and [GitHub Issues](https://github.com/sooom1627/night-switch/issues). Anything else (chat notes, external docs) is reference only; if it disagrees, the repo and Issues win.
+2. **Find the Issue first.** Do no work without one. Product work needs a Story (`story` label, `Epic: E-###`); tooling and docs use `chore` / `docs`; open questions only the owner can settle are `decision` Issues. If none exists, create it before starting (see `.cursor/rules/agile-workflow.mdc`).
+3. **Read the context** the Issue points to: the Story, its Epic row in `docs/product.md` §3, and the spec section it cites in §2. Screen Stories also need their `docs/screens/*.md`.
+4. **Follow the product language** in `docs/product.md` §1.5–1.6 for every user-facing string: no commands, no 「失敗」, no red, no warning icons, no falling numbers.
+5. **Never open a PR without an Issue.** The PR body lists the Issues it closes or refers to.
+
 # Expo HAS CHANGED
 
 Read the exact versioned docs at https://docs.expo.dev/versions/v57.0.0/ before writing any code that touches an Expo, EAS, or React Native API. For anything else, start from https://docs.expo.dev/llms.txt (an index of all Expo docs with corrections to common LLM misconceptions) and follow its links. Never answer from memory.
