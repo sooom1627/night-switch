@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Agile Workflow (Lightweight)
 
-Source of truth for tickets: **GitHub Issues** of `sooom1627/night-switch`. No sprint ceremonies, velocity, or story points. `docs/` holds the current spec only (product / IA / screens); Story-specific decisions and status live in Issues. `docs/archive/backlog.md` is a frozen record of finished work — do not edit it.
+Source of truth for tickets: **GitHub Issues** of `sooom1627/night-switch`. No sprint ceremonies, velocity, or story points. `docs/` holds the current spec only (product / IA / screens); Story-specific decisions and status live in Issues.
 
 Read and write Issues with the GitHub MCP tools or `gh issue view` / `gh issue edit`.
 
@@ -62,7 +62,7 @@ master
 ## Before coding
 
 1. Find the target Story issue. If missing, create it first (Story form, `Epic: E-###` line). A new Epic is added to the table in `docs/product.md` first.
-2. If the Story adds or changes screens, the matching `docs/screens/*.md` must already be on `master` (see [docs/design.md](docs/design.md)).
+2. If the Story adds or changes screens, the matching `docs/screens/*.md` must already be on `master` (how to write them: `docs/design.md`, tracked in issue #43 until it exists).
 3. Ensure the Story branch exists; cut a Task branch only after the Task issues and their Sub checklists are written.
 4. Split the Task into Subs (typically schema → db → hooks → UI). Do not implement an unsplit Task as one blob.
 5. Split the Story itself if it has more than 5 acceptance criteria or cannot ship in one PR after Task/Sub split.
@@ -109,3 +109,15 @@ master
 - `chore`: dependencies, tooling, config（専用ブランチ可。Story フロー不要）
 - `docs`: プロダクト / IA / 画面 Markdown（専用ブランチ可。Story 不要。本番コードを入れない）
 - Time-boxed spikes: leave no production code
+
+These still get an Issue so that all work is tracked on GitHub:
+
+| Label | For | Body |
+| --- | --- | --- |
+| `chore` | tooling, config, repo settings | `### 種類` / `### 関係` (Epic or phase) / `### やること` (checklist) / `### 完了の条件` |
+| `docs` | `docs/` changes | same as `chore` |
+| `decision` | a question only the owner can settle (assign the owner) | `### 種類` / `### 関係` / `### 決めること` / `### 期限` / `### 状況` |
+
+- `### 関係` names the Epic (`E-###`) or release phase the Issue serves, so every Issue links back to the plan
+- A PR for a `chore` / `docs` Issue uses `Closes #…` like a Story PR
+- When a `decision` is made, record the decision and date in `### 状況`, update `docs/` or the affected Stories, then close it
