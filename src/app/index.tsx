@@ -1,9 +1,10 @@
-import { StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet } from "react-native";
 
-import { ThemedText } from '@/shared/components/themed-text';
-import { ThemedView } from '@/shared/components/themed-view';
-import { Spacing } from '@/shared/constants/theme';
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { ThemedText } from "@/shared/components/themed-text";
+import { ThemedView } from "@/shared/components/themed-view";
+import { Spacing } from "@/shared/constants/theme";
 
 export default function HomeScreen() {
   return (
@@ -21,8 +22,8 @@ const styles = StyleSheet.create({
   },
   safeArea: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingHorizontal: Spacing.four,
   },
 });

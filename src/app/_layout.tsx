@@ -1,10 +1,11 @@
-import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
-import { useColorScheme } from 'react-native';
+import { useColorScheme } from "react-native";
+
+import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from "expo-router";
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack screenOptions={{ headerShown: false }} />
     </ThemeProvider>
   );
